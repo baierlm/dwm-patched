@@ -1,6 +1,15 @@
---- config.def.h	2020-06-22 09:05:12.112130865 +0200
-+++ config.h.bak	2020-06-22 15:30:19.138963670 +0200
-@@ -59,7 +59,7 @@
+--- config.def.h	2020-06-28 10:27:12.719906567 +0200
++++ config.h	2020-06-28 10:33:45.086575939 +0200
+@@ -30,7 +30,7 @@
+ 	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+ 	[SchemeTagsSel]  = { col_gray4, col_cyan,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+     [SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+-    [SchemeInfoSel]  = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
++    [SchemeInfoSel]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+     [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+ };
+ 
+@@ -64,7 +64,7 @@
  };
  
  /* key definitions */
@@ -9,7 +18,7 @@
  #define TAGKEYS(KEY,TAG) \
  	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
  	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-@@ -68,11 +68,11 @@
+@@ -73,11 +73,11 @@
  #define STACKKEYS(MOD,ACTION) \
  	{ MOD, XK_j,     ACTION##stack, {.i = INC(+1) } }, \
  	{ MOD, XK_k,     ACTION##stack, {.i = INC(-1) } }, \
@@ -26,7 +35,7 @@
  
  /* helper for spawning shell commands in the pre dwm-5.0 fashion */
  #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-@@ -84,44 +84,48 @@
+@@ -89,44 +89,48 @@
  
  static Key keys[] = {
  	/* modifier                     key        function        argument */
@@ -105,7 +114,7 @@
  	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
  	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
  	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-@@ -135,7 +139,7 @@
+@@ -140,7 +144,7 @@
  	TAGKEYS(                        XK_7,                      6)
  	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
