@@ -53,4 +53,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+*.diff
+autostart.sh
+autostart-blocking.sh
 config.h
